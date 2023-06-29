@@ -1,38 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+How to Set Up a Next.js 13 Project
 
-## Getting Started
+Step 1:
+In your desired directory, launch your terminal and run the following
+npx create-next-app
 
-First, run the development server:
+Step 2:
+Enter your project name and click enter and wait for it to install.
 
-```bash
-npm run dev
-# or
+Step 3:
+A new directory with your project name will be created with the necessary files.
+
+Step 4:
+cd your way into the new directory:
+cd <project-name>
+
+Step 5:
+To start the development server, run the following command:
+
+// if you're using yarn
 yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+// if you're using npm
+npm dev
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Step 6:
+Running that command will start the developement server and you can see your Next.js 13 app running on http://localhost:3000.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+How to Set Up Firebase in Next.js
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Step 1:
+Go to https://console.firebase.google.com/ and login in with your Google account.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Step 2:
+Click on Add Project and give your project a name. Click on Continue.
 
-## Learn More
+Step 3:
+On the next screen you can choose if you want to enable analytics for your project.
 
-To learn more about Next.js, take a look at the following resources:
+Step 4:
+Click on Create project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Step 5:
+Next, you need to create a web app. On your project homepage click on the web icon to create your web app
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![Alt text](./public/images/firebase-home.png)
 
-## Deploy on Vercel
+Step 6:
+Give your web app a name and click Register app.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Alt text](./public/images/firebase-web-register.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Step 7:
+Copy the configuration file we are going to need it later. Click next until you are done.
+This is what the final generated config should look like
+
+![Alt text](./public/images/firebase-config.png)
+
+Add this config into your firebase-messaging-sw.js and firebase.ts file
+
+Step 8:
+Next, we need to generate a web push certificate key. Navigate to the cloud messaging tab for your project and scroll to the Web configuration section.
+
+Under Web Push certificates, click on Generate key pair. Note the key that gets generated.
+
+Back in the firebase.ts file, we now need to enable messaging. Add Generated key into vapidKey
