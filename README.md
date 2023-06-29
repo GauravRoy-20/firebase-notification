@@ -18,9 +18,11 @@ Step 5:
 To start the development server, run the following command:
 
 // if you're using yarn
+
 yarn dev
 
 // if you're using npm
+
 npm dev
 
 Step 6:
